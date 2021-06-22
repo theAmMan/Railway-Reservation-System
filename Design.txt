@@ -1,0 +1,522 @@
+// Amartya Mandal	19CS10009
+
+**This is the design document for the IRCTC style Railway Reservation System**
+
+The classes, their data members and implemented functions are shown in the class diagram (refer to UML.pdf). Moreover, the use-case, sequence and other relevent diagrams are also presented in the UML.
+For further reference the same design details are presented here as well.
+
+The whole program is implemented via the following classes:
+
+1. Class Station
+
+	Functions: 
+
+	a. GetName (const): 
+    	- Returns the name of the station 
+
+	b. GetDistance (const): 
+    	- Takes a constant Station reference as argument and returns the distance between them
+
+	c. Equality check operator (friend, overloaded): 
+    	- Returns true if both stations are same 
+
+	Data Members:
+
+	Private:
+    	- Name of Station of type string 
+
+
+2. Class Date
+
+	Functions:
+
+	a. GetDay:
+		- Returns the weekday of the date
+
+	b. IsLeap:
+		- Checks whether it is a leap year
+	
+	b. Print (const):
+		- Prints the date
+
+	c. IsValid:
+	    - Checks whether the date is valid or not 
+
+	d. ToSTring:
+		- Returns the date as a string in DD/MM/YYYY format  
+
+	e. CalcAge:
+		- Returns difference between the date and today
+
+	e. CalcSpan:
+		- Calculates span of the year
+    
+	Data Members:
+
+	Private: 
+    	- 2 enum classes for Month and Day names 
+    	- 2 2-d char arrays for month names and day names  
+    	- 3 unsigned integers for date, month and year 
+
+3. Class Passenger
+
+	Functions:
+
+	a. GetName (const):
+		- Returns name of the Passenger
+
+	b. Print (const):
+		- Prints the Passenger details
+
+	c. IsValid:
+		- Check validity of the details
+
+
+    Data Members:
+
+    Private:
+    	- 1 string for name, broken into first, middle and last name to check validity
+    	- 4 strings for aadhar, mobile, disability type, and disability id.
+
+    Public:
+    	- Date of Birth as type Date
+    	- gender is of type Gender
+
+4. Class Railway
+    - Singleton Class (Constructor is hence private)
+
+	Functions:
+
+	a. GetInst (static):
+    	- Return the constant reference of the only element of the class 
+
+	b. GetDistance (const):
+    	- Takes two constant Station reference as arguments and returns the distance between them
+
+	c. Print (const): 
+    	- Prints all details about the Railways.
+
+	Data Members:
+
+	Private:
+		- name of the Railways as type string
+		- vector of Stations
+		- unordered_map containing the distance between every pair of stations
+
+5. Class BookingClass
+    - Abstract Base class of hierarchy
+
+	Functions:
+
+	a. GetLoadFactor (virtual):
+    	- Returns load factor of corresponding Booking class 
+
+	b. GetName (const):
+    	- returns name of Booking Class as type string 
+
+	c. IsSitting (const):
+    	- returns boolean true when the booking class has Seats
+
+	d. IsAC (const):
+    	- returns boolean true when the booking class has AC 
+	
+	e. GetNumberOfTiers (const):
+    	- returns the number of tiers in the booking class as type integer 
+
+	f. IsLuxury (const): 
+    	- returns boolean true when the booking class is luxurious 
+
+    g. GetCharge (const):
+    	- returns reservation charge of the BookingClass
+
+    h. SetLoadFactor:
+    	- Sets the Load Factor to a certain value given as input
+
+	i. SetLuxury:
+    	- Takes a boolean value as parameter and changes the luxury status of the booking class 
+
+    j. SetCharge:
+    	- Sets the Charge to a certain value given as input
+
+	k. Print (const):
+		- Prints all details of the Booking Class
+
+	l. SetTtklLoad:
+    	- Sets the tatkal load to a certain value given as input
+
+    m. SetMinChrg:
+    	- Sets the minimum tatkal charge to a certain value given as input
+	
+	n. SetMaxChrg:
+    	- Sets the maximum tatkal charge to a certain value given as input
+
+    0. SetMinDis:
+    	- Sets the minimum tatkal distance to a certain value given as input	
+    
+	Data Members:
+
+	Protected: 
+	    - name of the booking class as type string
+	    - boolean value for storing sitting status
+	    - boolean value for storing AC status
+	    - integer value for storing number of tiers
+	    - boolean value for storing luxury status
+	    - double value to store load factor
+	    - double value for storing the reservation charge
+	    - integers for min and max tatkal charge
+	    - integer for tatkal load factor
+	    - integer for minimum tatkal charge distance
+
+5.0 Class ACChairCar
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.1 Class ExecutiveChairCar		
+	- inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.2 Class SecondSitting
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.3 Class ACFirstClass
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.4 Class AC2Tier
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.5 Class FirstClass
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.6 Class AC3Tier
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+5.7 Class Sleeper
+    - inherited from class BookingClass
+    - final concrete class
+
+	Functions:
+
+	a. Type (static):
+    	- creates a static object and returns its reference
+
+	Data Members:
+
+		- All the data members defined in BookingClass are initialised to their values as mentioned in the constructor.
+
+6. Class BookingCategory
+	-Abstract Base Class for hierarchy
+
+	Functions:
+
+	a. GetName:
+		- Returns the name of the category
+
+	b. IsEligible():
+		- Checks whether the passenger is eligible for the category
+
+	Data members:
+	
+	Protected:
+		- 1 string for name
+		- 1 double for the concession factor	
+
+6.1 Class General
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.2 Class Tatkal
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.3 Class PremiumTatkal
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+**Concession hierarchy**
+6.4 Class Concession
+	- Inherited from BookingCategory
+	- abstract class
+
+	Functions:
+
+	a. CalConc:
+		- Returns the concesiion of the Category
+
+	b. IsEligible():
+		- Checks whether the passenger is eligible for the category
+
+
+6.4.1 Class Senior
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+	b. IsEligible():
+		- Checks whether the passenger is eligible for the category	
+
+6.4.2 Class Ladies
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+	b. IsEligible():
+		- Checks whether the passenger is eligible for the category
+
+**Divyang hierarchy**
+6.4.3 Class Divyang
+	- Inherited from BookingCategory
+	- abstract class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.4.3.1 Class Blind
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.4.3.2 Class Ortho
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.4.3.3 Class TB
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+
+6.4.3.1 Class Cancer
+	- Inherited from BookingCategory
+	- final concrete class
+
+	Functions:
+
+	a. Type (static):
+		- creates a static object and returns its reference
+	
+7. Class Booking
+	- Abstract Base Class
+
+	Functions:
+
+	a. ComputeFare (const):
+		- Returns the fare of the booking rounded to the nearest int
+
+	b. Print (const):
+		- Prints Details of the booking
+
+	c. IsValid:
+		- Check details of the Booking	
+
+    Data members:
+    
+    Protected:
+    	- 1 static const double for BaseFarePerKm
+    	- a static int for last alotted PNR serial
+    	- 2 stations, arrival and departure
+    	- 2 Dates for journey date and booking date
+    	- 1 BookingCategory for the category of the ticket
+    	- 1 BookingClass for the journey
+    	- a int for the pnr	serial
+    	- a constant pointer to a passenger
+    Public:
+    	- a static vector of pointers to Bookings alotted till now	
+
+** 	
+	The class Booking is also implemented as a hierarchy, parallel to the BookingCategory
+	There are 9 concrete derived classes -
+		1. GeneralBook 
+		2. TatkalBook
+		3. PremTatkalBook
+		4. SeniorBook
+		5. LadiesBook
+		6. BlindBook
+		7. OrthoBook
+		8. TBBook
+		9. CancerBook.
+	Each of these classes inherit all members of the class Booking
+	The function ComputeFare is redefined in each of them taking into consideration all concessiona and extra charges.
+**
+
+8. Class Exception
+	- Abstract Base Class for hierarchy
+	- Empty class
+
+8.1 Class Bad_Date
+	- Inherited from class Exception
+	- Empty class
+	- Thrown whenever an exception in Date class is observed
+
+8.2 Class Bad_Passenger
+	- Inherited from class Exception
+	- Empty class
+	- Thrown whenever an exception in Passenger class is observed
+
+8.3 Class Bad_Railway
+	- Inherited from class Exception
+	- Empty class
+	- Thrown whenever an exception in Railway class is observed
+
+8.4 Class Bad_Booking
+	- Inherited from class Exception
+	- Empty class
+	- Thrown whenever an exception in Booking class is observed
+
+9. Class Gender
+	-abstract base class
+
+	Functions:
+
+	a. GetName:
+		- returns name
+
+	b. GetTitle:
+		- returns title
+
+	c. IsMale:
+		- Check whether male
+
+	Data Members:
+	Protected:
+		1. name_ : string
+
+9.1 Class Male
+	-inherited from Gender				
+	-final concrete class
+
+	Functions:
+
+	a. Type:
+		- creates a static object and returns its reference
+
+	b.GetTitle:
+		- returns title
+
+9.2 Class Female
+	-inherited from Gender				
+	-final concrete class
+
+	Functions:
+
+	a. Type:
+		- creates a static object and returns its reference
+
+	b.GetTitle:
+		- returns title
+
+** Overloaded I/Ostream operators have been added to classes as required. Also to reduce congestion, the constructors and destructors for each class have not been drawn in the class diagram and is mentioned here only when they are private (for singletons) **
+
+Guidelines
+***********
+	• CamelCase is used for naming variables, classes, types and functions
+	• Every name is indicative of its semantics
+	• Every variable starts with a lower case letter
+	• Every function and class starts with an upper case letter
+	• Trailing underscore (_) for every non-static data member is used
+	• A leading 's' is used for every static data member
+	• No global variable or function (exceptmain(), andfriends) is used
