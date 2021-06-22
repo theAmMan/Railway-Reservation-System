@@ -1,6 +1,6 @@
 # Railway-Reservation-System
 
-//	Amartya Mandal		19CS10009
+- Amartya Mandal
 
 # Software Engineering
 
