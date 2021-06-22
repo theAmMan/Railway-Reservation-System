@@ -1,0 +1,158 @@
+INDIAN RAILWAYS
+   Stations:
+      Mumbai
+      Delhi
+      Bangalore
+      Kolkata
+      Chennai
+   Distances:
+      Chennai to Kolkata: 1659
+      Kolkata to Chennai: 1659
+      Chennai to Bangalore: 350
+      Kolkata to Bangalore: 1871
+      Bangalore to Chennai: 350
+      Bangalore to Kolkata: 1871
+      Chennai to Delhi: 2180
+      Kolkata to Delhi: 1472
+      Delhi to Chennai: 2180
+      Delhi to Kolkata: 1472
+      Mumbai to Bangalore: 981
+      Bangalore to Delhi: 2150
+      Bangalore to Mumbai: 981
+      Delhi to Mumbai: 1447
+      Mumbai to Delhi: 1447
+      Mumbai to Kolkata: 2014
+      Mumbai to Chennai: 1338
+      Kolkata to Mumbai: 2014
+      Chennai to Mumbai: 1338
+      Delhi to Bangalore: 2150
+
+Bad Date: 9/4/2021
+Invalid Booking Details
+Booking cancelled
+
+Bad Date: 9/6/2022
+Invalid Booking Details
+Booking cancelled
+
+Invalid Day
+Invalid DOB
+Invalid Passenger Details for: Steve Rogers
+Invalid Booking Details
+Booking cancelled
+
+BOOKING SUCCEEDED
+PNR Number: 1
+   Name: Mr. Anthony Edward
+   Aadhar #123498763456
+   DoB: 20/Dec/1960
+   Gender: Male
+   Mobile: 9876543210
+   Disability Type: Cancer
+   Disability Id: Can123
+
+From Station: Delhi
+To Station: Mumbai
+Booking Date: 9/4/2021
+Travel Date: 10/Apr/2021
+Travel Class: AC 3 Tier
+   Mode: Sleeping
+   Comfort: AC
+   Bunks: 3
+   Luxury: No
+Category: Tatkal
+Fare: 2249
+********************************
+
+BOOKING SUCCEEDED
+PNR Number: 2
+   Name: Ms. Wanda Maximoff
+   Aadhar #123498763456
+   DoB: 20/Dec/1960
+   Gender: Female
+   Mobile: 9876543210
+   Disability Type: Blind
+   Disability Id: Blin234
+
+From Station: Delhi
+To Station: Mumbai
+Booking Date: 9/4/2021
+Travel Date: 26/Apr/2021
+Travel Class: AC 3 Tier
+   Mode: Sleeping
+   Comfort: AC
+   Bunks: 3
+   Luxury: No
+Category: Senior
+Fare: 944
+********************************
+
+BOOKING SUCCEEDED
+PNR Number: 3
+   Name: Mr. Anthony Edward
+   Aadhar #123498763456
+   DoB: 20/Dec/1960
+   Gender: Male
+   Mobile: 9876543210
+   Disability Type: Cancer
+   Disability Id: Can123
+
+From Station: Mumbai
+To Station: Delhi
+Booking Date: 9/4/2021
+Travel Date: 18/Apr/2021
+Travel Class: AC First Class
+   Mode: Sleeping
+   Comfort: AC
+   Bunks: 2
+   Luxury: Yes
+Category: General
+Fare: 4763
+********************************
+
+BOOKING SUCCEEDED
+PNR Number: 4
+   Name: Ms. Wanda Maximoff
+   Aadhar #123498763456
+   DoB: 20/Dec/1960
+   Gender: Female
+   Mobile: 9876543210
+   Disability Type: Blind
+   Disability Id: Blin234
+
+From Station: Mumbai
+To Station: Delhi
+Booking Date: 9/4/2021
+Travel Date: 12/May/2021
+Travel Class: AC First Class
+   Mode: Sleeping
+   Comfort: AC
+   Bunks: 2
+   Luxury: Yes
+Category: Blind
+Fare: 2411
+********************************
+
+BOOKING SUCCEEDED
+PNR Number: 5
+   Name: Mr. Anthony Edward
+   Aadhar #123498763456
+   DoB: 20/Dec/1960
+   Gender: Male
+   Mobile: 9876543210
+   Disability Type: Cancer
+   Disability Id: Can123
+
+From Station: Mumbai
+To Station: Delhi
+Booking Date: 9/4/2021
+Travel Date: 9/Jun/2021
+Travel Class: AC First Class
+   Mode: Sleeping
+   Comfort: AC
+   Bunks: 2
+   Luxury: Yes
+Category: Cancer
+Fare: 2411
+********************************
+

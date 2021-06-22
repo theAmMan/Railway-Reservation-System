@@ -1,0 +1,56 @@
+TEST EXCEPTION********************
+PASSED Exception
+TEST STATION********************
+PASSED GetName
+PASSED Equality
+PASSED GetDistance
+TEST RAILWAYS********************
+PASSED Railways::GetDistance
+PASSED IsValid
+TEST DATE********************
+PASSED ToString
+PASSED Default Date
+PASSED GetDay
+PASSED IsValid
+PASSED IsValid for Leap Years
+PASSED CalcAge
+PASSED CalcSpan
+TESTING INVALID DATES
+Invalid Day (NOT Leap Year)
+Invalid Day
+Invalid Month
+Invalid Year
+TEST GENDER********************
+PASSED GetName
+PASSED GetTitle
+TEST PASSENGER********************
+PASSED GetName
+PASSED GetFirstname
+PASSED GetLastname
+PASSED GetDis
+PASSED IsValid
+TESTING INVALID PASSENGERS
+Invalid Name
+Invalid Aadhar
+Invalid Month
+Invalid DOB
+Invalid Mobile Number
+Invalid Disability
+TEST BOOKINGCLASS********************
+PASSED GetName
+PASSED IsSitting
+PASSED IsAc
+PASSED GetNumberOfTiers
+PASSED GetLoadFactor
+PASSED IsLuxury
+PASSED GetTtklLoad
+PASSED GetMaxChrg
+PASSED GetMinChrg
+PASSED GetMinDis
+TEST BOOKINGCATEGORY********************
+PASSED GetName
+PASSED IsEligible
+PASSED CalConc
+TEST BOOKING********************
+PASSED IsValid
+PASSED ComputeFare

@@ -1,0 +1,100 @@
+//	Amartya Mandal		19CS10009
+# Software Engineering
+
+## Assignment 5:   Test Plan, Implementation & Test Report
+
+Unit Test Plan:
+
+**PASS/FAIL appears when the output matches/ does not match with the expexcted output.**
+
+	1. Station:
+		- The functions of class Station are tested. The functions GetName(), Equality Operartor and GetDistance are tested.
+		- We create a Station instance "Mumbai"and test the functions.
+
+	2. Railways:
+		- The function GetDistance of class Railways is tested.
+		- We get the singleton class Railways by using GetInst and test GetDistance on it between stations "Mumbai" and "Delhi" and test IsValid. Invalid Railway could not be tested since it is hard coded.
+
+	3. Date:
+		- The functions GetDay, ToString, IsValid, CalcAge and CalcSpan are tested.
+		- We create a Date 5/Mar/2021 and test ToString on it. Also, we check the default parameters for constructor by comparing with 1/Jan/2021. Then, we check GetDay on 7/Mar/2021 (Sunday) and check validity for a normal year, 5/Mar/2021 and a leap year 29/Feb/2020. Also, we calculate the age for 6/Apr/2021 and the Span for 6/April/2022.  Invalid dates are also tested and the error is printed.
+
+	4. Gender:
+		- The functions GetName and GetTitle are tested.
+		- We test the functions on Male::Type() gender.
+
+	5. Passenger:
+		- The functions GetName, GetFName, GetLName, GetDis, IsValid are tested.
+		- We create a Passenger with name "Anthony Edward" and test GetName, GetFName, GetLName, GetDis and check for Validity. Invalid passengers are also tested and the error is printed.
+
+	6. BookingClass:
+		- The functions GetName, IsAC, IsSitting, IsLuxury, GetNumberOfTiers, GetLoadFactor, GetTtklLoad, GetMaxChrg, GetMinChrg, GetMinDis are tested.
+		- We create ACChairCar and get its single instance via Type(). We test the methods GetName, IsAC, IsSitting, IsLuxury, GetNumberOfTiers GetLoadFactor, GetTtklLoad, GetMaxChrg, GetMinChrg and GetMinDis on the class.
+
+	7. BookingCategory:
+		- The functions GetName, IsEligible and CalConc are tested.
+		- We create a Senior::Type() Booking Category for a passenger with age more thean 60 and test GetName, IsEligible and CalConc.
+
+	8. Booking:
+		- The functions IsValid and ComputeFare are tested.
+		- We create a booking from Mumbai to Delhi on 15/Jun/2021 in ACFirstClass for a passenger named "Anthony Edward". We test the functions ComputeFare and IsValid on the booking. Invalid Bookings are tested in the TestApplication.
+
+	9. Exception:
+		- The constructor is tested.
+		- An instance of Bad_Railway is created and tested.
+
+**Exception Handling occurs at each IsValid() function and is called whenver required**
+
+**GOLDEN OUTPUT: 
+	- Every valid test should print PASSED.
+	- All invalid testings should print the error.
+
+Test Application:
+
+	- The details of the Railway are printed.
+	- Various Types of Booking that can be done are tested.
+	- 3 passengers are created, one Male, one Female and the last with Invalid DOB (Invalid Mobile or Aadhaar will behave similar to this).
+	- 8 Bookings, of which 5 are valid, are done for these 3 passengers.
+	- Bookings are done for General, Tatkal, Senior, Ladies, Blind and Cancer categories.
+	- Booking is tried for a past date and a date beyond a year of the current date.
+	- Booking is tried for an invalid passenger.
+	- Booking is tried for an ineligible category (the program redirects these Bookings to General category).
+	- For every successful Booking, the booking details are printed.
+	- For unsuccessful Bookings, the exception is printed.
+	- For the Tatkal and Premium Tatkal Booking, the date needs to be immediately after the system date, else a general booking is done.
+	- the PNR increases serially for each booking, which are added to the booking vector along with their correctly computed fares.
+
+**For more details please open TestApplication.cpp**	
+
+**GOLDEN OUTPUT: 
+	- Every invalid Booking should print the error.
+	- All the valid bookings should be alloted PNR serially from 1, their Fare computed correctly and all details printed correctly.
+
+	Example Error:
+		Bad Date: 9/4/2021
+		Invalid Booking Details
+		Booking cancelled
+
+	Example Valid Booking:
+		BOOKING SUCCEEDED
+		PNR Number: 1
+		   Name: Mr. Anthony Edward
+		   Aadhar #123498763456
+		   DoB: 20/Dec/1960
+		   Gender: Male
+		   Mobile: 9876543210
+		   Disability Type: Cancer
+		   Disability Id: Can123
+
+		From Station: Delhi
+		To Station: Mumbai
+		Booking Date: 9/4/2021
+		Travel Date: 10/Apr/2021
+		Travel Class: AC 3 Tier
+		   Mode: Sleeping
+		   Comfort: AC
+		   Bunks: 3
+		   Luxury: No
+		Category: Tatkal
+		Fare: 2249
+		********************************
