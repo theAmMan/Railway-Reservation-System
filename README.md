@@ -1,9 +1,5 @@
 # Railway-Reservation-System
 
-- Amartya Mandal
-
-# Software Engineering
-
 This is a rudimentary railway reservation / booking system (somewhat like IRCTC Train Ticket Booking, but extremely scaled down in features). The same is implemented via an Object Oriented C++ programme which is broken into numerous files.
 
 The main folder is classified into 3 parts:
@@ -53,3 +49,7 @@ Commands used to get Output txt files:
 	2. TestApplication: g++ TestApplication.cpp Booking.cpp BookingCategory.cpp BookingClass.cpp Railways.cpp Passenger.cpp Gender.cpp Date.cpp Station.cpp Error.cpp
 
 **Please read the .h files in Implementation section for further notes on member variables and functions as comments**
+
+# Contributors
+
+- Amartya Mandal
