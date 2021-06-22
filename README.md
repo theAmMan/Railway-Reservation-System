@@ -4,9 +4,7 @@
 
 # Software Engineering
 
-## Assignment 5:   Test Plan, Implementation & Test Report
-
-In this assignment we develop a rudimentary railway reservation / booking system (somewhat like IRCTC Train Ticket Booking, but extremely scaled down in features). The same is implemented via an Object Oriented C++ programme which is broken into numerous files.
+This is a rudimentary railway reservation / booking system (somewhat like IRCTC Train Ticket Booking, but extremely scaled down in features). The same is implemented via an Object Oriented C++ programme which is broken into numerous files.
 
 The main folder is classified into 3 parts:
 
